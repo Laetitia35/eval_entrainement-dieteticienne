@@ -2,20 +2,70 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <title>{% block title %}Sandrine Coupart - Diététicienne Nutritionniste{% endblock %}</title>
+        <link rel="icon" href="images/flaticon.png" rel="stylesheets">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {{ encore_entry_link_tags('app') }}
 
-        {% block stylesheets %}
-            
-        {% endblock %}
-
-        
+        {% block stylesheets %} {% endblock %}        
     </head>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <img src= "{{ asset('images/SandrineCoupart.png') }}" class="img-fluid logo" alt="logo" width="180px" height="140px"/>
+            <a class="navbar-brand" href="#">Accueil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">A propos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Mes services</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Idées recettes
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Végétarien</a></li>
+                    <li><a class="dropdown-item" href="#">Sans gluten</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sportif</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">Contact</a>
+                </li>
+              </ul>
+                <button type="button" class="btn btn-success">S'identifier</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+  
+    </header>
+
     <body>
+
+       
+      <footer>
+          <p>Sandrine Coupart - Nutritionniste Diététicienne - Tous droits réservés - 2022
+          <small><a href="#">Mentions Légales</a> . <a href="#">Politique de confidentialité</a></small>
+          </p>
+      </footer>
+
         {% block body %} {% endblock %}
         {{ encore_entry_script_tags('app') }}
         {% block javascripts %} {% endblock %}
     </body>
+
+        
+    
 </html>
+
+
+

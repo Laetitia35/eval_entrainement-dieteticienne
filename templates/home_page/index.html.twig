@@ -1,7 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bienvenue !{% endblock %}
+{% block title %}Sandrine Coupart - Diététicienne Nutritionniste{% endblock %}
 
 {% block body %}
+
+{{ encore_entry_link_tags('app') }}
+
+    <h3>Une Diététicienne Nutritionniste à votre écoute</h3>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src= "{{ asset('images/vegetables.jpg') }}" class="d-block w-100" alt="vegetables"  height="600px">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/diet-sandwich.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ asset('images/coeur-fruits.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+      <span class="description">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{ asset('images/woman.jpg') }}" class="img-fluid rounded-start" alt="..." width="200px" height="400px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Je me présente</h5>
+              <p class="card-text">Exerçant au sein dans ses cabinet de Caen et de Torigny-les-Villes, la diététicienne Carine Lamotte propose ses services à tous types des personnes notamment les enfants, les personnes âgées et les diabétiques, afin de les aider à rééquilibrer leur régime alimentaire.
+              Titulaire d’un BTS diététique, la diététicienne Carine Lamotte a suivi une formation complémentaire en éducation nutritionnelle à Toulouse ainsi qu’une formation en pleine conscience et éducation thérapeutique.
+              Forte de 20 ans d'expérience en diététique dans le domaine hospitalier où elle a pu prendre en charge des patients souffrant de dénutrition et de diabète, elle propose ses prestations de diététique aux enfants et personnes âgées depuis janvier 2018 dans ses cabinets de diététique à Caen et à torigny-les-villes ansi qu'à domicile.
+              Intervenant auprès des Écoles, des Maternelles, de la Caisse d’allocations familiales (CAF) et du Centre Communal d'Action Sociale (CCAS), la spécialiste de l’éducation thérapeutique Carine Lamotte propose des formations et ateliers portant sur l'éducation alimentaire, la pleine conscience et la cuisine diététique.
+             Soucieuse de vous apporter un service de proximité, la diététicienne Carine Lamotte se déplace à domicile à Caen et ses environs en Normandie.</p>
+            </div>
+          </div>
+        
+        </div>
+      </span>
+      
+    {{ encore_entry_script_tags('app') }}
+    {% block javascripts %} {% endblock %}
 
 {% endblock %}
