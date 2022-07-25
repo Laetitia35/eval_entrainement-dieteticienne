@@ -14,20 +14,20 @@
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
             <img src= "{{ asset('images/SandrineCoupart.png') }}" class="img-fluid logo" alt="logo" width="180px" height="140px"/>
-            <a class="navbar-brand" href="#">Accueil</a>
+            <a class="navbar-brand" href="{{ path('app_home_page') }}">Accueil</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">A propos</a>
+                  <a class="nav-link active" aria-current="page" href="#a_propos">A propos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Mes services</a>
+                  <a class="nav-link" href="#mes_services">Mes services</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="{{ path('app_recettes') }}" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                       Idées recettes
                   </a>
                   <ul class="dropdown-menu">
@@ -38,7 +38,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link">Contact</a>
+                  <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
                 </li>
               </ul>
                 <button type="button" class="btn btn-success">S'identifier</button>
@@ -51,7 +51,6 @@
 
     <body>
 
-       
       <footer class="fixed-bottom">
           <p>SANDRINE COUPART - Diététicienne Nutritionniste diplomés d'Etat - Editer par Laetitia DECRE © Tous droits réservés - 2022 
           <small><a href="#">Mentions Légales</a> - <a href="#">Politique de confidentialité</a></small>
