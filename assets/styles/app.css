@@ -1,28 +1,27 @@
-@import "node_modules/bootstrap/css/bootstrap" ;
+header {
+    
+    background:  #609A7D;
+}
 
 .img-fluid {
     
     margin-right: 50px;
 }
 
-header {
-    background-color: #609A7D;
-    
-}
 
 h3 {
     text-align: center;
+    padding: 20px;
 }
 
 span {
-    margin: 50px;
-    padding: 50px;
-
+    margin: 60px;
+    padding: 60px;
 }
 
 footer {
+    color: white;
     text-align: center;
-    position: absolute;
     width: 100%;
     background-color: #609A7D;
     padding-top: 25px;
