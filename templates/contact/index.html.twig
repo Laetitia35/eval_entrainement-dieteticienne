@@ -4,4 +4,23 @@
 
 {% block body %}
 
+{{ encore_entry_link_tags('app') }}
+
+    <h3>Me contacter</h3>
+    <p>N'hesitez pas à prendre contact avec moi même pour plus de renseignements ou pour une prise de rendez vous. Je vous répondrais dans les meilleurs délais.</p>
+    <div class="row">
+        <div class="col-md-8">{{ form(form) }}</div>
+        <div class="col-md-4">
+            <strong>Sandrine Coupart</strong>
+            <hr>
+            8 rue des lilas <br/>
+            14 000 Caen <br/>
+            contact@sandrine-coupart.fr <br/>
+            06 00 00 00 00 <br/>
+        </div>
+    </div>
+
+    {{ encore_entry_script_tags('app') }}
+    {% block javascripts %} {% endblock %}
+
 {% endblock %}
