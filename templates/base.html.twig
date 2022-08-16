@@ -30,10 +30,10 @@
                 <a class="nav-link text-light"  href="{{ path('app_home_page') }}">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light"  href="#a_propos">A propos</a>
+                <a class="nav-link text-light"  href="{{ path('app_home_page', {'_fragment' :'a_propos'}) }}">A propos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#mes_services">Mes services</a>
+                <a class="nav-link text-light" href="{{ path('app_home_page', {'_fragment' :'mes_services'}) }}">Mes services</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="{{ path('app_recettes') }}">Idées recettes</a>
