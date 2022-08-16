@@ -17,35 +17,35 @@
     </head>
 
     <header>
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <img src= "{{ asset('images/SandrineCoupart.png') }}" class="img-fluid logo" alt="logo" width="180px" height="140px"/>
-            <a class="navbar-brand text-light" href="{{ path('app_home_page') }}">Accueil</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active text-light" aria-current="page" href="#a_propos">A propos</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="#mes_services">Mes services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="{{ path('app_recettes') }}">
-                      Idées recettes
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="{{ path('app_contact') }}">Contact</a>
-                </li>
-              </ul>
-            </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="{{ path('app_home_page') }}"><img src= "{{ asset('images/SandrineCoupart.png') }}" class="img-fluid logo" alt="logo" width="160px" height="120px"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-light"  href="{{ path('app_home_page') }}">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light"  href="#a_propos">A propos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#mes_services">Mes services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{{ path('app_recettes') }}">Idées recettes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="{{ path('app_contact') }}">Contact</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-success my-2 my-sm-0" type="submit">S'identifier</button>
+            </form>
           </div>
-           <div class"register">
-                <button type="button" class="btn btn-success pull-left" href="{{ path('app_register') }}">S'identifier</button>
-              </div>
         </nav>
   
     </header>
