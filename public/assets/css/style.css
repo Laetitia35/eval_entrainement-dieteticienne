@@ -26,13 +26,17 @@ section {
     padding: 20px;
     text-align: justify;
 }
+p {
+    padding : 10px; 
+}
 
 footer {
-    font-size: 0.5em;
+    font-size: small;
     color: white;
     text-align: center;
     width: 100%;
     background-color: #609A7D;
-    padding-top: 25px;
+    padding-top: 8px;
     margin-top: 50px;
+   
 }
