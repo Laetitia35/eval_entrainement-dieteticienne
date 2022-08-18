@@ -58,22 +58,36 @@
             La cheffe cuisinière Alix vous transmettra son savoir-faire au cours des ateliers.<br>
             Nous proposons des ateliers de cuisine diététiques en groupe (maximum 8 personnes) sous plusieurs thématiques : cuisine diététique thérapeutique ou cuisine adaptée aux problèmes quotidiennes. Tout le matériel necessaire vous sera fourni sur le lieu de l'atelier cuisine : tablier et ustensiles de cuisine.<br>
             Nous allons confectionner de la cuisine thérapeutique adaptée à une pathologie à la cuisine plaisir et saine, c’est pour vous l’occasion d’apprendre une nouvelle façon de manger. Nous élaborons ensemble les recettes des ateliers, en fonction du thème à aborder.<br>
-            La cheffe s’organise pour vous fournir des produits frais de saison, locaux et biologiques (dans la mesure du possible) qu’elle se procure auprès des producteurs de notre belle région bretonne. Nous sommes convaincues que la bonne cuisine passe avant tout par des produits bruts de qualité. Et tout ceci, sans alourdir votre budget !
-
+            La cheffe s’organise pour vous fournir des produits frais de saison, locaux et biologiques (dans la mesure du possible) qu’elle se procure auprès des producteurs de notre belle région bretonne. Nous sommes convaincues que la bonne cuisine passe avant tout par des produits bruts de qualité. Et tout ceci, sans alourdir votre budget.
           </p>
       </section>
 
       <section id= "avis">
         <h3>Laisser vos avis</h3>
         <p>N'hesiter pas à me laisser un commentaire</p>
-        <div class="form-group">
-          <div class="form-input">
-             <input class="form-check-input" type="checkbox" id="publicCheck">
-             <label class="form-check-label" for="gridCheck">
-             Rendre cette notation publique
-             </label>
+        
+        <form action="" method="post">
+          <div>
+            <label for="name">Votre nom</label>
+            <input type="text" name="name">
+        </div>
+          <div>
+              <label for="titre">Titre</label>
+              <input type="text" name="titre">
           </div>
-       </div>
+          <div>
+              <label for="commentaire">Commentaire</label>
+              <textarea name="comment" id="commentaire"></textarea>
+          </div>
+          <div class="stars">
+              <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star" data-value="4"></i><i class="lar la-star" data-value="5"></i>
+          </div>
+          <input type="hidden" name="note" id="note" value="0">
+          <button type="submit">Valider</button>
+      </form>
+  
+         
+       
 
       </section>
       

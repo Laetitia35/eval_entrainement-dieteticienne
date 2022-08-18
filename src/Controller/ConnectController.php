@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class RegisterController extends AbstractController
+class ConnectController extends AbstractController
 {
-    #[Route('/se_connecter', name: 'app_register')]
+    #[Route('/se_connecter', name: 'app_connect')]
     public function index(): Response
     {
-        return $this->render('register/index.html.twig');
+        return $this->render('connect/index.html.twig');
     }
 }

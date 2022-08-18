@@ -26,9 +26,11 @@ section {
     padding: 20px;
     text-align: justify;
 }
+
 p {
     padding : 10px; 
 }
+
 
 footer {
     font-size: small;
