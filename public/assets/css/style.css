@@ -1,5 +1,6 @@
 body {
     background: #f3f3f7;
+    
 }
 
 header {
@@ -8,6 +9,10 @@ header {
     font-size: 1.2em;
 }
 
+form {
+    margin-left: 100px;
+    margin-right: 150px;
+}
 
 .img-fluid {
     
@@ -38,7 +43,7 @@ footer {
     text-align: center;
     width: 100%;
     background-color: #609A7D;
-    padding-top: 8px;
+    
     margin-top: 50px;
    
 }
