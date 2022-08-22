@@ -44,9 +44,13 @@
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-              <button class="btn btn-success my-2 my-sm-0" type="submit">
-                <a class="text-light" href="{{ path('app_login') }}">S'identifier</a>
-              </button>
+              {% if app.user %}
+                <a href="{{ path('app-account') }}">Mon compte</a> | <a href ="{{ path('app-logout') }}">Déconnexion</a>
+              {% else %}
+                <button class="btn btn-success my-2 my-sm-0" type="submit">
+                  <a class="text-light" href="{{ path('app_login') }}">S'identifier</a>
+                </button>
+              {% endif %}
             </form>
           </div>
         </nav>

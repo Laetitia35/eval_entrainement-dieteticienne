@@ -8,6 +8,7 @@ use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -21,8 +22,9 @@ class RegisterAdminController extends AbstractController
     }
 
     #[Route('/inscription', name: 'app_register_admin')]
-    public function index(Request $request): Response
+    public function index(Request $request, UserPasswordHasherInterface $passwordHasher): Response
     {
+        
         $user = new User();
         $form = $this->createForm(RegisterAdminType::class, $user);
 
@@ -32,9 +34,13 @@ class RegisterAdminController extends AbstractController
 
             $user = $form->getData();
 
+            $password = $passwordHasher->hashPassword($user, $user->getPassword());
+
+
             $this->entityManager->persist($user);
             $this->entityManager->flush();
         }
+
 
         return $this->render('register_admin/index.html.twig', [
             'form' => $form->createView(),
