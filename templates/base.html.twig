@@ -43,15 +43,14 @@
                 <a class="nav-link text-light" href="{{ path('app_contact') }}">Contact</a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              {% if app.user %}
-                <a href="{{ path('app-account') }}">Mon compte</a> | <a href ="{{ path('app-logout') }}">Déconnexion</a>
-              {% else %}
-                <button class="btn btn-success my-2 my-sm-0" type="submit">
-                  <a class="text-light" href="{{ path('app_login') }}">S'identifier</a>
-                </button>
-              {% endif %}
-            </form>
+            <div class="navbar-item-custom">
+                {% if app.user %}
+                  <a href="{{ path('app-account') }}">Mon compte</a> | <a href ="{{ path('app-logout') }}">Déconnexion</a>
+                {% else %}
+                  <button class="btn btn-success my-2 my-sm-0" type="submit">
+                    <a class="text-light" href="{{ path('app_login') }}">S'identifier</a>
+                  </button>
+                {% endif %}
           </div>
         </nav>
   
@@ -59,7 +58,7 @@
 
     <body>
 
-      <footer class="fixed-bottom">
+      <footer class="fixed-bottom mt-5">
           <p>SANDRINE COUPART - Diététicienne Nutritionniste diplomés d'Etat - Editer par Laetitia DECRE © Tous droits réservés - 2022 -  
           <small><a class="text-light" href="{{ path('app_rgpd') }}"> Mentions Légales et Politique de confidentialité</a></small>
           </p>

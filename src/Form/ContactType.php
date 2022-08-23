@@ -36,7 +36,7 @@ class ContactType extends AbstractType
             ->add('content', TextareaType::class, [
                 'label' => 'Votre message',
                 'attr' => [
-                    'placeholder' => 'En quoi je peux vous aidez ?'
+                    'placeholder' => 'En quoi puis-je vous aidez ?'
                 ]
             ])
             ->add('Submit', SubmitType::class, [

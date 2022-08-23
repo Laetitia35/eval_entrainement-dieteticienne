@@ -31,12 +31,12 @@ class AccountPasswordController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $old_pwd = $form->get('old_password')->getData();
 
-            if($encoder->isPasswordValid($user, $old_pwd)) {
+            if ($hasher->isPasswordValid($user, $old_pwd)) {
                $new_pwd = $form->get('new_password')->getData();
-               $password = $encoder->encodePassword($user, $new_pwd);
+               $password = $hasher->hashPassword($user, $new_pwd);
 
                $user->setPassword($password);
-               $this->entityManager->flush();
+               $this->entityManager->persist($user);
                $notification = "Votre mot de passe à bien été mis à jour.";
             } else {
                 $notification ="Votre mot de passe actuel n'est pas le bon.";
