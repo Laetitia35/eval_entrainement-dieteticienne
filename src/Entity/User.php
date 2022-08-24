@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -32,6 +34,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
+
+    #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'user')]
+    private Collection $recipes;
+
+    #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'users')]
+    private Collection $allergen;
+
+    #[ORM\ManyToMany(targetEntity: Diet::class, inversedBy: 'users')]
+    private Collection $diet;
+
+    public function __construct()
+    {
+        $this->recipes = new ArrayCollection();
+        $this->allergen = new ArrayCollection();
+        $this->diet = new ArrayCollection();
+    }
 
     
     public function getId(): ?int
@@ -125,6 +143,81 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Recipes>
+     */
+    public function getRecipes(): Collection
+    {
+        return $this->recipes;
+    }
+
+    public function addRecipe(Recipes $recipe): self
+    {
+        if (!$this->recipes->contains($recipe)) {
+            $this->recipes->add($recipe);
+            $recipe->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecipe(Recipes $recipe): self
+    {
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergen>
+     */
+    public function getAllergen(): Collection
+    {
+        return $this->allergen;
+    }
+
+    public function addAllergen(Allergen $allergen): self
+    {
+        if (!$this->allergen->contains($allergen)) {
+            $this->allergen->add($allergen);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergen(Allergen $allergen): self
+    {
+        $this->allergen->removeElement($allergen);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Diet>
+     */
+    public function getDiet(): Collection
+    {
+        return $this->diet;
+    }
+
+    public function addDiet(Diet $diet): self
+    {
+        if (!$this->diet->contains($diet)) {
+            $this->diet->add($diet);
+        }
+
+        return $this;
+    }
+
+    public function removeDiet(Diet $diet): self
+    {
+        $this->diet->removeElement($diet);
 
         return $this;
     }

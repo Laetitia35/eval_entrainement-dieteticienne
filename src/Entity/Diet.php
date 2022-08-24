@@ -16,14 +16,18 @@ class Diet
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $Type = null;
 
-    #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'Diet')]
-    private Collection $Allergen;
+    #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'diet')]
+    private Collection $recipes;
+
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'diet')]
+    private Collection $users;
 
     public function __construct()
     {
-        $this->Diet = new ArrayCollection();
+        $this->recipes = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -31,14 +35,14 @@ class Diet
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getType(): ?string
     {
-        return $this->name;
+        return $this->Type;
     }
 
-    public function setName(string $name): self
+    public function setType(string $Type): self
     {
-        $this->name = $name;
+        $this->Type = $Type;
 
         return $this;
     }
@@ -46,25 +50,52 @@ class Diet
     /**
      * @return Collection<int, Recipes>
      */
-    public function getDiet(): Collection
+    public function getRecipes(): Collection
     {
-        return $this->Diet;
+        return $this->recipes;
     }
 
-    public function addDiet(Recipes $diet): self
+    public function addRecipe(Recipes $recipe): self
     {
-        if (!$this->Diet->contains($diet)) {
-            $this->Diet->add($diet);
-            $diet->addDiet($this);
+        if (!$this->recipes->contains($recipe)) {
+            $this->recipes->add($recipe);
+            $recipe->addDiet($this);
         }
 
         return $this;
     }
 
-    public function removeDiet(Recipes $diet): self
+    public function removeRecipe(Recipes $recipe): self
     {
-        if ($this->Diet->removeElement($diet)) {
-            $diet->removeDiet($this);
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeDiet($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addDiet($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeDiet($this);
         }
 
         return $this;
