@@ -35,7 +35,8 @@ class RegisterAdminController extends AbstractController
             $user = $form->getData();
 
             $password = $passwordHasher->hashPassword($user, $user->getPassword());
-
+            
+            $user->setPassword($password);
 
             $this->entityManager->persist($user);
             $this->entityManager->flush();
