@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Classe\Search;
-use App\Entity\Recipe;
 use App\Entity\Recipes;
 use App\Form\SearchType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -42,14 +41,14 @@ class RecipesController extends AbstractController
         ]);
     }
 
-    #[Route('/recette/{slug}', name: 'app_recipes')]
+    #[Route('/recette/{slug}', name: 'app_recipes/{slug}')]
     public function show($slug): Response
     {
-        $recipe = $this->entityManager->getRepository(Recipes::class)->findOneBySlug($slug);
+        $recipe = $this->entityManager->getRepository(Recipes::class)-> findOneBy(['slug' => $slug]);
 
         if (!$recipe) {
             return $this->redirectToRoute('app_recipes');
-        }
+       }
 
         return $this->render('recipes/show.html.twig', [
             'recipes' => '$recipes',

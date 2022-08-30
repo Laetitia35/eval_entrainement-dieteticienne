@@ -30,8 +30,8 @@ class RecipesCrudController extends AbstractCrudController
             IntegerField::new('preparation_time'),
             IntegerField::new('timeout'),
             IntegerField::new('cooking_time'),
-            TextField::new('ingredients'),
-            TextField::new('stage'),
+            TextEditorField::new('ingredients'),
+            TextEditorField::new('stage'),
             ImageField::new('illustration')
                 ->setBasePath('images/')
                 ->setUploadDir('public/images/')

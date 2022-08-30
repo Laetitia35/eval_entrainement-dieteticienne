@@ -31,7 +31,7 @@ class Recipes
     #[ORM\Column]
     private ?int $Cooking_Time = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $Ingredients = null;
 
     #[ORM\Column(type: Types::TEXT)]

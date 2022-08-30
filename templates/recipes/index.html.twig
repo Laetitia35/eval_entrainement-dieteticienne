@@ -17,7 +17,7 @@
             {% for recipe in recipes %}
               <div class="col-md-4">
               <div class="recipe-item text-center">
-                <a href="{{ path('app_recipes', { 'slug' : recipes.slug }) }}"><img src="/images/{{ recipes.illustration }}" alt="{{ recipes.title }}" class="img-fluid"></a>
+                <a href="{{ path('app_recipes', { 'slug': recipes.slug }) }}"><img src="/images/{{ recipes.illustration }}" alt="{{ recipes.title }}" class="img-fluid"></a>
                 <h5>{{ recipes.title }}</h5>
                 <span>{{ recipes.description }}</span>
               </div>
