@@ -45,7 +45,6 @@ class RegisterAdminController extends AbstractController
 
         return $this->render('register_admin/index.html.twig', [
             'form' => $form->createView(),
-            '$passwordGenerator->generateRandomStrongPassword(20)',
         ]);
     }
 }

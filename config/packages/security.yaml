@@ -20,7 +20,7 @@ security:
             # anonymous: true
             lazy: true
             #provider: app_user_provider
-            #custom_authenticator : App\Security\UsersAuthenticator;
+            entry_point: form_login
 
             form_login :
                 login_path : app_account
@@ -29,9 +29,10 @@ security:
 
             logout:
                 path: app_logout
+            custom_authenticator: App\Security\LoginFormAuthenticator
                 # where to redirect after logout
                  #target: app_any_route
-            # custom_authenticator: App\Security\UsersAuthenticator  
+             
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
