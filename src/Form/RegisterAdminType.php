@@ -21,10 +21,10 @@ class RegisterAdminType extends AbstractType
 
             ->add('firstname', TextType::class, [
                 'label' =>'Prenom :',
-                'constraint' => new Length([
-                    'min' => 2,
-                    'max' => 30,
-                ]),
+                #'constraint' => new Length([
+                #    'min' => 2,
+                #    'max' => 30,
+                #]),
                 'attr' =>[
                     'placeholder' => 'Merci de saisir le prenom du patient'
                 ]
@@ -32,10 +32,10 @@ class RegisterAdminType extends AbstractType
 
             ->add ('lastname',  TextType::class, [
                 'label' =>'Nom :',
-                'constraint' => new Length([
-                    'min' => 2,
-                    'max' => 30,
-                ]),
+                #'constraint' => new Length([
+                    #'min' => 2,
+                    #'max' => 30,
+                #]),
                 'attr' =>[
                     'placeholder' => 'Merci de saisir le nom du patient'
                 ]
@@ -43,10 +43,10 @@ class RegisterAdminType extends AbstractType
 
             ->add('email',   EmailType::class, [
                 'label' =>'Email :',
-                'constraint' => new Length ([
-                    'min' => 2,
-                    'max' => 60,
-                ]),
+                #'constraint' => new Length ([
+                #    'min' => 2,
+                #    'max' => 60,
+                #]),
                 'attr' =>[
                     'placeholder' => "Merci de saisir l'adresse email du patient"
                 ]
