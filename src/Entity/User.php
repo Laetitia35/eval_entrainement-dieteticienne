@@ -38,10 +38,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'user')]
     private Collection $recipes;
 
-    #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'user')]
     private Collection $allergen;
 
-    #[ORM\ManyToMany(targetEntity: Diet::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Diet::class, inversedBy: 'user')]
     private Collection $diet;
 
     public function __construct()

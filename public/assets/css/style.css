@@ -1,3 +1,9 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #f3f3f7;
     position: relative;
@@ -61,6 +67,21 @@ p {
     margin-bottom: 150px;
 }
 
+.account-item {
+    background-color: #bdb9b3;
+    padding: 70px;
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size : 13px;
+    color: #4b6584;
+    font-weight: bold;
+}
+.account-item a:hover {
+    text-decoration: none;
+    color: #778ca3;
+}
 
 footer {
     font-size: small;

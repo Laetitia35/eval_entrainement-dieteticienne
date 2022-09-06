@@ -19,8 +19,11 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form ->isValid()) {
             $this->addFlash('notice', "Merci de m'avoir contacter. Je vous répond dans les meilleurs délais.");
 
-           /* $mail = new Mail();
-            $mail->send('contact@sandrine-coupart.fr', 'Sandrine Coupart', 'Vous avez reçu une demande de contact');*/
+            // dd($formData['nom']);
+            $content = "Bonjour </br>Vous avez reçus un message de <strong>".$form->getData()['prenom']." ".$form->getData()['nom']."</strong></br>Adresse email : <strong>".$form->getData()['email']."</strong> </br>Message : ".$form->getData()['content']."</br></br>"; 
+
+            $mail = new Mail();
+            $mail->send('contact@sandrine-coupart.fr', 'Sandrine Coupart', 'Vous avez reçu une demande de contact');
         }
 
         return $this->render('contact/index.html.twig', [

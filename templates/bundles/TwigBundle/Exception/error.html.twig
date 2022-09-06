@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable - Sandrine Coupart{% endblock %}
+
+{% block body %}
+
+    <div class="block-small">
+        <h3>Page introuvable</h3>
+        <p>Désolé, cette page ne semble pas accécible pour le monent.</p>
+        <a href="{{ path('app_home_page') }}" class="btn btn-info">Revenir à l'accueil</a>
+    </div>
+
+{% endblock %}
