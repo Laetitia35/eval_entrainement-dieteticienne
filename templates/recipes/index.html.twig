@@ -5,27 +5,30 @@
 {% block body %}
 
   <div class="row">
-    <div class="col-md-3"></div>
+  
+    <div class="col-md-4">
       <h3>Filtrer</h3>
       {{ form(form) }}
-    <div class="col-md-9">
+    </div>
+
+    <div class="col-md-8">
       
       <h3>Les recettes</h3>
 
-      <section>
+      
         <div class="row recipe-container">
             {% for recipe in recipes %}
               <div class="col-md-4">
-              <div class="recipe-item text-center">
-                <a href="{{ path('app_recipes', { 'slug': recipes.slug }) }}"><img src="/images/{{ recipes.illustration }}" alt="{{ recipes.title }}" class="img-fluid"></a>
-                <h5>{{ recipes.title }}</h5>
-                <span>{{ recipes.description }}</span>
+                <div class="recipe-item text-center">
+                  <a href="{{ path('app_recipes', { 'slug': recipes.slug }) }}"><img src="/images/{{ recipes.illustration }}" alt="{{ recipes.title }}" class="img-fluid"></a>
+                  <h5>{{ recipes.title }}</h5>
+                  <span>{{ recipes.description }}</span>
+                </div>
               </div>
-        </div>
 
-      {% endfor %}
-    </div>
-  </section>
+            {% endfor %}
+        </div>
+      
     </div>
   </div>
 

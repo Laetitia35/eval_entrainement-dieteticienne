@@ -33,6 +33,7 @@ class RecipesController extends AbstractController
 
         } else {
             $recipes = $this->entityManager->getRepository(Recipes::class)->findAll();
+            
         }
 
         return $this->render('recipes/index.html.twig', [

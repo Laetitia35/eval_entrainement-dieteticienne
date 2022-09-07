@@ -12,9 +12,7 @@ class PasswordGenerator
 
         $numbers = $this->generateCharactersWithCharCodeRange([48, 57]); 
 
-        $symbols = $this->generateCharactersWithCharCodeRange([33, 47, 58, 64, 91, 96, 123, 126]);
-
-        $allCharacters = array_merge($uppercaseLetters, $lowercaseLetters, $numbers, $symbols);
+        $allCharacters = array_merge($uppercaseLetters, $lowercaseLetters, $numbers);
        
         $isArrayShuffled = shuffle($allCharacters);
 

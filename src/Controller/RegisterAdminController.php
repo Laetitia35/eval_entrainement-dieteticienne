@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\PasswordGenerator;
 
 
 class RegisterAdminController extends AbstractController
@@ -21,10 +22,12 @@ class RegisterAdminController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
+
     #[Route('/inscription', name: 'app_register_admin')]
-    public function index(Request $request, UserPasswordHasherInterface $passwordHasher): Response
+    public function index(Request $request, UserPasswordHasherInterface $passwordHasher, PasswordGenerator $passwordGenerator): Response
     {
-        
+        $generator = print_r($passwordGenerator->generateRandomStrongPassword(20));
+
         $user = new User();
         $form = $this->createForm(RegisterAdminType::class, $user);
 
@@ -42,9 +45,11 @@ class RegisterAdminController extends AbstractController
             $this->entityManager->flush();
         }
 
-
         return $this->render('register_admin/index.html.twig', [
             'form' => $form->createView(),
+            'generator'=> $generator
+           
+            
         ]);
     }
 }

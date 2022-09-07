@@ -2,8 +2,13 @@
 
 namespace App\Form;
 
+use App\Service\PasswordGenerator;
+use App\Entity\Allergen;
+use App\Entity\Diet;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -52,6 +57,13 @@ class RegisterAdminType extends AbstractType
                 ]
             ])
             
+            ->add('button', ButtonType::class, [
+                'label' => "Obtenir un mot de passe générer",
+                 //'generator' => $passwordGenerator->generateRandomStrongPassword(20);
+                
+                
+            ])
+
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class, 
                 'invalid_message' =>'Le mot de passe et la confirmation doivent être identique',
@@ -70,17 +82,35 @@ class RegisterAdminType extends AbstractType
                     ]
                     
                 ]
-                
             ])
 
-            //->add('passwordGenerate', ButtonType::class, [
-                //'label' =>'genérer le mot de passe aléatoire'
-            //]) 
+            ->add('diet', ChoiceType::class, [
+                  'choices' => [
+                    new Diet('Proteine'),
+                    new Diet('Hypocalorique'),
+                    new Diet('Vegetarien'),
+                    new Diet('Sans sel'),
+                ]
+            ])
+
+            ->add('allergen', ChoiceType::class, [
+                'choices' => [
+                    new Allergen('Gluten'),
+                    new Allergen('Crustacés'),
+                    new Allergen('Oeufs'),
+                    new Allergen('Arachides'),
+                    new Allergen('Poisson'),
+                    new Allergen('Soja'),
+                    new Allergen('Lait'),
+                    new Allergen('Fruits à coques')
+                    
+                ]
+            ])
 
             ->add('submit', SubmitType::class, [
                 'label' => "Valider l'inscription"
-                
             ])
+        
         ;
     }
 

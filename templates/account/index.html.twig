@@ -6,15 +6,17 @@
 
     <h3>Mon compte</h3>
 
-    {% if is_granted('ROLE_ADMIN') %}
-     <div class="text-center">
-        <a href="/admin"> Vous êtes administrateur, accéder au back office</a><br/>
-     </div>
-    {% endif %}
-
     <p class="text-center">Bienvenue dans votre compte {{ app.user.firstname }}.<br/>
     C'est dans cet espace que vous allez pouvoir accéder à vos services personnalisés.</p><hr>
 
+    {% if is_granted('ROLE_ADMIN') %}
+     <div class="text-center">
+        <a href="/admin"> Vous êtes administrateur, accéder au back office</a><br/>
+        <a href="/inscription">Inscrire vos patients en tant qu'administrateur</a><br/>
+     </div>
+    {% endif %}
+
+   
     <div class="row">
 
         <div class="col-md-4">

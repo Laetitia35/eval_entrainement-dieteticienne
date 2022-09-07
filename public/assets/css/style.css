@@ -47,17 +47,17 @@ p {
     padding : 10px; 
 }
 
-.product-item {
+.recipe-item {
     margin-top: 50px;
 }
 
-.product-item h5 {
+.recipe-item h5 {
     text-transform: uppercase;
     font-size : 15px;
     margin-bottom: 1px;
 }
 
-.product-item span {
+.recipe-item span {
     font-size: 14;
     display: block;
     margin-bottom: 10px;
