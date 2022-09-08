@@ -24,10 +24,14 @@ class Diet
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'diet')]
     private Collection $users;
 
+    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'diets')]
+    private Collection $relation;
+
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->relation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -104,5 +108,29 @@ class Diet
     public function __toString() {
 
         return $this->getType();
+    }
+
+    /**
+     * @return Collection<int, user>
+     */
+    public function getRelation(): Collection
+    {
+        return $this->relation;
+    }
+
+    public function addRelation(user $relation): self
+    {
+        if (!$this->relation->contains($relation)) {
+            $this->relation->add($relation);
+        }
+
+        return $this;
+    }
+
+    public function removeRelation(user $relation): self
+    {
+        $this->relation->removeElement($relation);
+
+        return $this;
     }
 }

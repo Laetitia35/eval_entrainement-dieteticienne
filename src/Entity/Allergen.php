@@ -25,10 +25,14 @@ class Allergen
     #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'allergen')]
     private Collection $users;
 
+    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'allergens')]
+    private Collection $user;
+
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->user = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -80,5 +84,13 @@ class Allergen
     public function __toString() {
 
         return $this->getType();
+    }
+
+    /**
+     * @return Collection<int, user>
+     */
+    public function getUser(): Collection
+    {
+        return $this->user;
     }
 }

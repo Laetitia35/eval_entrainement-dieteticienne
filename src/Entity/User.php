@@ -38,17 +38,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'user')]
     private Collection $recipes;
 
-    #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'user')]
+    #[ORM\ManyToMany(targetEntity: Allergen::class, mappedBy: 'user')]
     private Collection $allergen;
 
-    #[ORM\ManyToMany(targetEntity: Diet::class, inversedBy: 'user')]
+    #[ORM\ManyToMany(targetEntity: Diet::class, mappedBy: 'user')]
     private Collection $diet;
+
+    #[ORM\ManyToMany(targetEntity: Allergen::class, mappedBy: 'user')]
+    private Collection $allergens;
+
+    #[ORM\ManyToMany(targetEntity: Diet::class, mappedBy: 'relation')]
+    private Collection $diets;
 
     public function __construct()
     {
         $this->recipes = new ArrayCollection();
         $this->allergen = new ArrayCollection();
         $this->diet = new ArrayCollection();
+        $this->allergens = new ArrayCollection();
+        $this->diets = new ArrayCollection();
     }
 
     
@@ -220,5 +228,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->diet->removeElement($diet);
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergen>
+     */
+    public function getAllergens(): Collection
+    {
+        return $this->allergens;
+    }
+
+    /**
+     * @return Collection<int, Diet>
+     */
+    public function getDiets(): Collection
+    {
+        return $this->diets;
     }
 }

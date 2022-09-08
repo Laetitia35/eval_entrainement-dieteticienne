@@ -52,7 +52,7 @@ class RecipesController extends AbstractController
        }
 
         return $this->render('recipes/show.html.twig', [
-            'recipes' => '$recipes',
+            'recipe' => '$recipe',
             
         ]);
     }

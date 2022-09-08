@@ -6,6 +6,7 @@ use App\Service\PasswordGenerator;
 use App\Entity\Allergen;
 use App\Entity\Diet;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -58,8 +59,8 @@ class RegisterAdminType extends AbstractType
             ])
             
             ->add('button', ButtonType::class, [
-                'label' => "Obtenir un mot de passe générer",
-                 //'generator' => $passwordGenerator->generateRandomStrongPassword(20);
+                'label' => "Obtenir un mot de passe générer"
+                 //'generator' => $passwordGenerator->generateRandomStrongPassword(10);
                 
                 
             ])
@@ -106,6 +107,7 @@ class RegisterAdminType extends AbstractType
                     
                 ]
             ])
+
 
             ->add('submit', SubmitType::class, [
                 'label' => "Valider l'inscription"
