@@ -86,26 +86,13 @@ class RegisterAdminType extends AbstractType
             ])
 
             ->add('diet', ChoiceType::class, [
-                  'choices' => [
-                    new Diet('Proteine'),
-                    new Diet('Hypocalorique'),
-                    new Diet('Vegetarien'),
-                    new Diet('Sans sel'),
-                ]
+                  'label' => 'Régime'
+                
             ])
 
             ->add('allergen', ChoiceType::class, [
-                'choices' => [
-                    new Allergen('Gluten'),
-                    new Allergen('Crustacés'),
-                    new Allergen('Oeufs'),
-                    new Allergen('Arachides'),
-                    new Allergen('Poisson'),
-                    new Allergen('Soja'),
-                    new Allergen('Lait'),
-                    new Allergen('Fruits à coques')
-                    
-                ]
+                'label' => 'Allergène'
+               
             ])
 
 

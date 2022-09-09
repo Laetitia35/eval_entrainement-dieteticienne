@@ -63,29 +63,36 @@
       </section>
 
       <section id="avis" class="container-lg text-center">
-        <h3>Laisser vos avis</h3>
-        <p>N'hesiter pas à me laisser un commentaire</p>
+
+        <h3>Avis des patients</h3>
+
+        {% if app.user %}
+
+        <p>N'hesiter pas à me laisser un avis</p>
         
         <form action="" method="post">
           <div>
             <label for="name">Votre prénom</label>
-            <input type="text" name="name">
+            <input type="text" class="name">
         </div>
           <div>
-              <label for="titre">Titre</label>
-              <input type="text" name="titre">
-          </div>
-          <div>
               <label for="commentaire">Commentaire</label>
-              <textarea name="comment" id="commentaire"></textarea>
+              <textarea class="commentaire" name="comment"  id="commentaire"></textarea>
           </div>
           <div class="stars">
-              <i class="lar la-star" data-value="1"></i><i class="lar la-star" data-value="2"></i><i class="lar la-star" data-value="3"></i><i class="lar la-star" data-value="4"></i><i class="lar la-star" data-value="5"></i>
+              <i class="lar la-star" data-value="1"></i>
+              <i class="lar la-star" data-value="2"></i>
+              <i class="lar la-star" data-value="3"></i>
+              <i class="lar la-star" data-value="4"></i>
+              <i class="lar la-star" data-value="5"></i>
           </div>
           <input type="hidden" name="note" id="note" value="0">
-          <button type="submit">Valider</button>
+          <button type="button" class="btn btn-primary buttonAvis">Valider</button>
+          
       </form>
 
+        {% else %}
+        {% endif %}
       </section>
       
     
