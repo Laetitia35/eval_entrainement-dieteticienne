@@ -82,8 +82,10 @@ p {
     text-decoration: none;
     color: #778ca3;
 }
-
-
+.avis_patients {
+    height: 300px;
+    width: 500px;
+}
 
 footer {
     font-size: small;

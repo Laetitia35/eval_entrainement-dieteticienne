@@ -48,11 +48,11 @@
 
       <section id="mes_services">
         <h3> Mes services</h3>
-          <h4>Une consultation personnaliser</h4>
+          <h5>Une consultation personnaliser</h5>
           <p>Lors de cette consultation, nous allons faire le bilan sur vos apports nutritionnels et analyser vos habitude alimentaires. Définir ensemble des objectifs spécifiques, quantifiables, realisables et durables.  
           </p>
 
-          <h4>Des ateliers diététiques</h4>
+          <h5>Des ateliers diététiques</h5>
           <p>
             Nous vous proposons des ateliers de cuisine diététique à thème directement à la Maison de Santé de Caen.<br>
             La cheffe cuisinière Alix vous transmettra son savoir-faire au cours des ateliers.<br>
@@ -62,23 +62,25 @@
           </p>
       </section>
 
-      <section id="avis" class="container-lg text-center">
+      <section id="avis" class="avis_container">
 
         <h3>Avis des patients</h3>
 
         {% if app.user %}
 
-        <p>N'hesiter pas à me laisser un avis</p>
+        <h5 class="text-center">N'hesiter pas à me laisser un avis</h5>
         
-        <form action="" method="post">
-          <div>
-            <label for="name">Votre prénom</label>
-            <input type="text" class="name">
-        </div>
-          <div>
-              <label for="commentaire">Commentaire</label>
-              <textarea class="commentaire" name="comment"  id="commentaire"></textarea>
+        <form class="form-group" id="form">
+          <div class="col">
+            <label for="firstname">Votre Prénom</label>
+            <input type="text" class="firstname form-control" id="firstname" placeholder ="Votre Prénom">
           </div>
+          <br>
+          <div class="col">
+              <label for="commentaire">Votre commentaire</label>
+              <textarea class="commentaire form-control"  name="comment"  id="commentaire" placeholder="votre avis"></textarea>
+          </div>
+          <br>
           <div class="stars">
               <i class="lar la-star" data-value="1"></i>
               <i class="lar la-star" data-value="2"></i>
@@ -86,13 +88,19 @@
               <i class="lar la-star" data-value="4"></i>
               <i class="lar la-star" data-value="5"></i>
           </div>
-          <input type="hidden" name="note" id="note" value="0">
-          <button type="button" class="btn btn-primary buttonAvis">Valider</button>
+          <p> Note sur 5 étoiles</p>
+          <input type="hidden" name="note form-check form-check-inline" id="note" value="0">
+          <button type="submit" class="buttonAvis btn btn-primary">Publier votre avis</button>
           
-      </form>
-
-        {% else %}
+        </form>
+    
         {% endif %}
+
+        <div class="avis_patients" id="avis_patients">
+          <h5>Les avis de mes patients</h5>
+          <span class="avis_list" id="avis_list"></span>
+        </div>
+      
       </section>
       
     

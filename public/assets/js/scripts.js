@@ -1,29 +1,41 @@
-//AVIS selecteurs 
+///form.onsubmit = (e) => {
+   // avis_patients.textContent = `Prenom: ${firstname.value}, avis: ${commentaire.value},
+    //note : ${note.value}`.
 
-let name = document.querySelector(".name");
-let commentaire = document.querySelector(".commentaire");
-let note = document.querySelector(".note");
-let buttonAvis = document.querySelector(".buttonAvis");
+   // e.preventDefault();
+    
+//}
 
-//ecouteurs
+// AVIS Selecteurs
+
+let firstname = document.querySelector("#firstname");
+let commentaire = document.querySelector("#commentaire");
+let note = document.querySelector("#note");
+let buttonAvis= document.querySelector("#buttonAvis");
+
+// écouteurs évenements
 buttonAvis.addEventListener("click", addAvis);
 
 //functions
-
 function addAvis(event) {
     event.preventDefault();
 
-    let avisDiv = document.createElement("div");
-    avisDiv.classList.add("avis");
+    let addFirstname = document.createElement("h5");
+    addFirstname.classList.add("firstname");
+    addFirstname.textContent = firstname;
+    avis_list.prepend(addFirstname);
 
-    let newAvis = document.createElement("li");
-    newAvis.innerText="ca fonctionne";
-    newAvis.classList.add("avis-item");
-    avisDiv.dispatchEvent.appendChild(newAvis);
+    let addComment = document.createElement("p");
+    addComment.classList.add("commentaire");
+    addComment.textContent = commentaire;
+    avis_list.prepend(addComment);
 
-    avisList.appendChild(avisDiv);
-    avisInput.value = "";
+    //let addNote = document.createElement("p");
+    //addNote.classList.add("note");
+    //addNote.textContent = note;
+    //avis_list.prepend(addNote);
 }
+
 
 // Stars
 window.onload = () => {
@@ -82,3 +94,4 @@ window.onload = () => {
         }
     }
 }
+
