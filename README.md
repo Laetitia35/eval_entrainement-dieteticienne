@@ -20,3 +20,9 @@ https://127.0.0.1:8000/
 
 
 # 2. Déployer le projet symfony en ligne avec Heroku
+
+Le déployement en ligne à était effectué sur Heroku pour le moment mais suite au dernières actualités concernant ce dernier, je vais probablement déployer le projet sur un autre hebergeur en ligne.
+
+# 3. Création d'un administrateur 
+
+Les accès au compte administrateur seront données avec ma copie évaluation pour ainsi préserver la sécurité de l'application web.
