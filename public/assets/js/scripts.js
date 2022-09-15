@@ -95,3 +95,6 @@ window.onload = () => {
     }
 }
 
+function btn_auth() {
+    alert(" Il faut être un patient du Docteur Sandrine Coupart pour pouvoir s'identifier et bénéficier de certaines fonctionnalités du site web.");
+}

@@ -48,9 +48,9 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Recipes', 'fas fa-pot-food', Recipes::class);
-        yield MenuItem::linkToCrud('Diet', 'fa fa-pot-food', Diet::class);
-        yield MenuItem::linkToCrud('Allergen', 'fa-regular fa-pot-food', Allergen::class);
+        yield MenuItem::linkToCrud('Recipes', 'fa fa-fork-knife', Recipes::class);
+        yield MenuItem::linkToCrud('Diet', 'fa fa-weight-scale', Diet::class);
+        yield MenuItem::linkToCrud('Allergen', 'fa fa-wheat-awn-circle-exclamation', Allergen::class);
         
     }
 }
